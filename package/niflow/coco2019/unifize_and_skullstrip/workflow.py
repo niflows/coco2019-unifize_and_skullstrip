@@ -25,10 +25,10 @@ def init_unifize_and_skullstrip_wf(name='unifize_and_skullstrip_wf'):
     unifize = pe.Node(afni.Unifize(outputtype='NIFTI'), name='unifize')
 
     wf.connect([
-        (inputnode, bet, [('in_file', 'in_file')]),
-        (bet, unifize, [('out_file', 'in_file')]),
-        (inputnode, unifize, [('out_file', 'out_file')]),
-        (unifize, outputnode, [('out_file', 'out_file')]),
+        (inputnode, unifize, [('in_file', 'in_file')]),
+        (unifize, bet, [('out_file', 'in_file')]),
+        (inputnode, bet, [('out_file', 'out_file')]),
+        (bet, outputnode, [('out_file', 'out_file')]),
         ])
 
     return wf
