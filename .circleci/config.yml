@@ -27,6 +27,6 @@ jobs:
           no_output_timeout: 60m
           command: |
             source ~/.bashrc
-            testkraken -v /home/circleci/nfm_tests -w /home/circleci/nfm_tests/outputs/coco 
+            nfm test /home/circleci/nfm_tests -w /home/circleci/nfm_tests/outputs/coco 
       - store_artifacts:
           path: /home/circleci/nfm_tests
