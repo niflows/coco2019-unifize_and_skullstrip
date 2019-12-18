@@ -10,6 +10,9 @@ requirements:
     conda_install: [python=3.7, nipype]
 
 nfm_test:
+  data:
+    type: workflow_path
+    location: data
   env:
     base:
     - {image: debian:stretch, pkg-manager: apt}
